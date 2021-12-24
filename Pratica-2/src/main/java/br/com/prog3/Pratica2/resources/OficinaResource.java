@@ -67,7 +67,7 @@ public class OficinaResource {
 		oficinaService.deleteById(id);
     }
 	
-	@GetMapping(path = {"codigoOficina/{codigoOficina}"})
+	@GetMapping(path = {"/codigoOficina/{codigoOficina}"})
 	public ResponseEntity<?> findByCodigoOficina(@PathVariable("codigoOficina") CodigoOficina codigoOficina){ 
 		List<Oficina> oficinas = oficinaService.findByCodigoOficina(codigoOficina); 
 		return oficinas.isEmpty() 
