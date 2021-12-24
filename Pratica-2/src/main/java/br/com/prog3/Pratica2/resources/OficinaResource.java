@@ -55,6 +55,7 @@ public class OficinaResource {
 			c.setNome(oficina.getNome());
 			c.setEspecialidade(oficina.getEspecialidade());
 			c.setEndereco(oficina.getEndereco());
+			c.setCarro(oficina.getCarro());
 			oficinaService.update(c);
 			return c;
 	    } else {

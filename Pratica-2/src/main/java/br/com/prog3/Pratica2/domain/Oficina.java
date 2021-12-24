@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import br.com.prog3.Pratica2.enums.CodigoOficina;
 
@@ -16,6 +18,13 @@ public class Oficina {
 	private String nome;
 	private String especialidade;
 	private String endereco;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_carro", nullable = true, updatable = true) 
+	private Carro carro;
+	    public Oficina() {
+	}
+	    
 	public Long getId() {
 		return id;
 	}
@@ -45,5 +54,11 @@ public class Oficina {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	public Carro getCarro() {
+		return carro;
+	}
+	public void setCarro(Carro carro) {
+		this.carro = carro;
 	}
 }

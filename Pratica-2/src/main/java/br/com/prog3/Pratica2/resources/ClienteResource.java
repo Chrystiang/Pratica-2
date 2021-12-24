@@ -53,6 +53,7 @@ public class ClienteResource {
 			c.setCpf(cliente.getCpf());
 			c.setNome(cliente.getNome());
 			c.setDataNascimento(cliente.getDataNascimento());
+			c.setCarro(cliente.getCarro());
 			clienteService.update(c);
 			return c;
 	    } else {
