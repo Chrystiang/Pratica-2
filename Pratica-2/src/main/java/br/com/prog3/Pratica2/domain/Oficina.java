@@ -1,5 +1,6 @@
 package br.com.prog3.Pratica2.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class Oficina {
 	private String especialidade;
 	private String endereco;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name = "id_carro", nullable = true, updatable = true) 
 	private Carro carro;
 	    public Oficina() {
